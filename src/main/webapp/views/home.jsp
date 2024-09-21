@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	trang chủ của user
+	<a href="${pageContext.request.contextPath}/logout">Logout</a>
+	<h1>Trang chủ của user</h1>
+	
 </body>
 </html>

@@ -72,6 +72,12 @@ span.psw {
 	padding-top: 16px;
 }
 
+/* Additional link for registration */
+span.register {
+	float: right;
+	padding-top: 16px;
+}
+
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
 	span.psw {
@@ -102,7 +108,9 @@ span.psw {
 
 		<div class="container" style="background-color: #f1f1f1">
 			<button type="button" class="cancelbtn">Cancel</button>
-			<span class="psw">Forgot <a href="#">password?</a></span>
+			<span class="psw"> _____Forgot <a href="${pageContext. request. contextPath}/forgotpass">password?</a></span>
+			<span class="register"> <a href="${pageContext.request.contextPath}/register">Register</a></span>
+			
 		</div>
 	</form>
 </body>

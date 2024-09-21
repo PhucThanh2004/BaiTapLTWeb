@@ -80,17 +80,17 @@ a {
 			<p>Please fill in this form to create an account.</p>
 			<hr>
 
-			<label for="username"><b>Tên đăng nhập</b></label> <input type="text"
-				placeholder="Tên đăng nhập" name="username" id="username" required>
+			<label for="username"><b>Username</b></label> <input type="text"
+				placeholder="Enter Username" name="username" id="username" required>
 
-			<label for="fullname"><b>Họ tên</b></label> <input type="text"
-				placeholder="Họ tên" name="fullname" id="fullname" required>
+			<label for="fullname"><b>Fullname</b></label> <input type="text"
+				placeholder="Enter Fullname" name="fullname" id="fullname" required>
 
 			<label for="email"><b>Email</b></label> <input type="text"
 				placeholder="Enter Email" name="email" id="email" required>
 
-			<label for="phone"><b>Số điện thoại</b></label> <input type="text"
-				placeholder="Số điện thoại" name="phone" id="phone" required>
+			<label for="phone"><b>Phone Number</b></label> <input type="text"
+				placeholder="Enter Phone Number" name="phone" id="phone" required>
 
 			<label for="psw"><b>Password</b></label> <input type="password"
 				placeholder="Enter Password" name="psw" id="psw" required> <label
@@ -100,12 +100,14 @@ a {
 			<hr>
 
 
-			<button type="submit" class="registerbtn">Tạo tài khoản</button>
+			<button type="submit" class="registerbtn">Create Account</button>
 		</div>
 
 		<div class="container signin">
 			<p>
-				Nếu bạn đã có tài khoản? <a href="#">Đăng nhập</a>.
+				<span class="psw">
+				If you already have an account? <a href="${pageContext. request. contextPath}/login">Login</a>.
+				</span>
 			</p>
 		</div>
 	</form>

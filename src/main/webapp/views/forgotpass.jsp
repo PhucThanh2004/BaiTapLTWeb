@@ -94,7 +94,7 @@ span.psw {
 				for="email"><b>Email</b></label> <input type="text"
 				placeholder="Enter Email" name="email" required>
 
-			<button type="submit">Lấy lại mật khẩu</button>
+			<button type="submit">Get Password</button>
 			
 		</div>
 
