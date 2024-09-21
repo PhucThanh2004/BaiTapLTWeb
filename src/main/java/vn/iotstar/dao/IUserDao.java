@@ -12,8 +12,10 @@ public interface IUserDao {
 	
 	void insert(UserModel user); 
 
-	//Nội dung #3
 	UserModel findByUserName(String username);
-	
+
+	boolean checkExistEmail(String email);
+	boolean checkExistUsername(String username);
+	boolean checkExistPhone(String phone);
 	
 }
