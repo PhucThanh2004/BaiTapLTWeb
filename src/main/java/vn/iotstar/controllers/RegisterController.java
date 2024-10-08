@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.Cookie;
+//import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -31,7 +31,7 @@ public class RegisterController extends HttpServlet {
 			resp.sendRedirect(req.getContextPath() + "/admin");
 			return;
 		}
-		Cookie[] cookies = req.getCookies();
+		/*Cookie[] cookies = req.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
 				if (cookie.getName().equals("username")) {
@@ -42,7 +42,7 @@ public class RegisterController extends HttpServlet {
 				}
 			}
 		}
-		req.getRequestDispatcher(Constant.Path.REGISTER).forward(req, resp);
+		req.getRequestDispatcher(Constant.Path.REGISTER).forward(req, resp);*/
 
 	}
 
@@ -52,7 +52,7 @@ public class RegisterController extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		
 		String username = req.getParameter("username");
-		String password = req.getParameter("psw");
+		String password = req.getParameter("password");
 		String email = req.getParameter("email");
 		String fullname = req.getParameter("fullname");
 		String phone = req.getParameter("phone");

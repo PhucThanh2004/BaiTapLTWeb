@@ -3,113 +3,108 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt"%>
 <%@ taglib prefix="fn" uri="jakarta.tags.functions"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
 
-<style>
-* {
-	box-sizing: border-box
-}
+<!-- BEGIN CONTENT -->
+<div class="col-md-9 col-sm-9">
+	<h1>Create an account</h1>
+	<div class="content-form-page">
+		<div class="row">
+			<div class="col-md-7 col-sm-7">
+				<c:if test="${alert !=null}">
+					<h3 class="alert alert-danger">${alert}</h3>
+				</c:if>
+				<form action="${pageContext.request.contextPath}/register"
+					method="post" class="form-horizontal" role="form">
+					<fieldset>
+						<legend>Your personal details</legend>
+						<div class="form-group">
+							<label for="username" class="col-lg-4 control-label">Username
+								<span class="require">*</span>
+							</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="username"
+									name="username" placeholder="Enter Username" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="fullname" class="col-lg-4 control-label">Fullname
+								<span class="require">*</span>
+							</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="fullname"
+									name="fullname" placeholder="Enter Fullname" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="email" class="col-lg-4 control-label">Email <span
+								class="require">*</span></label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="email" name="email"
+									placeholder="Enter Email" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="phone" class="col-lg-4 control-label">Phone
+								Number <span class="require">*</span>
+							</label>
+							<div class="col-lg-8">
+								<input type="text" class="form-control" id="phone" name="phone"
+									placeholder="Enter Phone Number" required>
+							</div>
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>Your password</legend>
+						<div class="form-group">
+							<label for="password" class="col-lg-4 control-label">Password
+								<span class="require">*</span>
+							</label>
+							<div class="col-lg-8">
+								<input type="password" class="form-control" id="password"
+									name="password" placeholder="Enter Password" required>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="psw-repeat" class="col-lg-4 control-label">Confirm
+								Password <span class="require">*</span>
+							</label>
+							<div class="col-lg-8">
+								<input type="password" class="form-control" id="psw-repeat"
+									name="psw-repeat" placeholder="Repeat Password" required>
+							</div>
+						</div>
+					</fieldset>
+					<div class="row">
+						<div
+							class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">
+							<button type="submit" class="btn btn-primary">Create an
+								account</button>
+							<button type="button" class="btn btn-default">Cancel</button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4 col-sm-4 pull-right">
+				<div class="form-info">
+					<h2>
+						<em>Important</em> Information
+					</h2>
+					<p>Lorem ipsum dolor ut sit ame dolore adipiscing elit, sed sit
+						nonumy nibh sed euismod ut laoreet dolore magna aliquarm erat sit
+						volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl
+						aliquip commodo quat.</p>
 
-/* Add padding to containers */
-.container {
-	padding: 16px;
-}
+					<p>Duis autem vel eum iriure at dolor vulputate velit esse vel
+						molestie at dolore.</p>
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-	width: 100%;
-	padding: 15px;
-	margin: 5px 0 22px 0;
-	display: inline-block;
-	border: none;
-	background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-	background-color: #ddd;
-	outline: none;
-}
-
-/* Overwrite default styles of hr */
-hr {
-	border: 1px solid #f1f1f1;
-	margin-bottom: 25px;
-}
-
-/* Set a style for the submit/register button */
-.registerbtn {
-	background-color: #04AA6D;
-	color: white;
-	padding: 16px 20px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	width: 100%;
-	opacity: 0.9;
-}
-
-.registerbtn:hover {
-	opacity: 1;
-}
-
-/* Add a blue text color to links */
-a {
-	color: dodgerblue;
-}
-
-/* Set a grey background color and center the text of the "sign in" section */
-.signin {
-	background-color: #f1f1f1;
-	text-align: center;
-}
-</style>
-
-
-<body>
-	<form action="/ltwebct2/register" method="post">
-		<c:if test="${alert !=null}">
-			<h3 class="alert alert danger">${alert}</h3>
-		</c:if>
-		<div class="container">
-			<h1>Register</h1>
-			<p>Please fill in this form to create an account.</p>
-			<hr>
-
-			<label for="username"><b>Username</b></label> <input type="text"
-				placeholder="Enter Username" name="username" id="username" required>
-
-			<label for="fullname"><b>Fullname</b></label> <input type="text"
-				placeholder="Enter Fullname" name="fullname" id="fullname" required>
-
-			<label for="email"><b>Email</b></label> <input type="text"
-				placeholder="Enter Email" name="email" id="email" required>
-
-			<label for="phone"><b>Phone Number</b></label> <input type="text"
-				placeholder="Enter Phone Number" name="phone" id="phone" required>
-
-			<label for="psw"><b>Password</b></label> <input type="password"
-				placeholder="Enter Password" name="psw" id="psw" required> <label
-				for="psw-repeat"><b>Repeat Password</b></label> <input
-				type="password" placeholder="Repeat Password" name="psw-repeat"
-				id="psw-repeat" required>
-			<hr>
-
-
-			<button type="submit" class="registerbtn">Create Account</button>
+					<button type="button" class="btn btn-default">More details</button>
+				</div>
+			</div>
 		</div>
+	</div>
+</div>
+<!-- END CONTENT -->
 
-		<div class="container signin">
-			<p>
-				<span class="psw">
-				If you already have an account? <a href="${pageContext. request. contextPath}/login">Login</a>.
-				</span>
-			</p>
-		</div>
-	</form>
-</body>
-</html>
+
+
+
